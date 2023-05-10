@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+</head>
+<body>
+    <main>
+        <h1>
+            <%= header %>
+        </h1>
+        <form action="<%= action %>" method="POST">
+            <div>
+                <% fields.forEach(field=>{%>
+                    <p>
+                        <Label><%= field.name %></Label>
+                        <input type="text" 
+                            name="<%= field.name.toLowerCase() %>" 
+                            size="<%= field.size %>"
+                            value="<%= field.value %>"
+                            <%= field.readonly%>
+                            >
+                    </p>
+
+                <% }) %>
+                 
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <a href="/"><button>Menu</button></a>
+    </main>
+</body>
+</html>
